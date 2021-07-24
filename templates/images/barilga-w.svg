@@ -1,0 +1,20 @@
+<svg width="809" height="339" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#ffffff;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="811" height="341" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="Layer_x0020_1">
+   <metadata id="CorelCorpID_0Corel-Layer"/>
+   <path class="fil0" d="m119,102l102,0l8,0l9,0l102,0l0,-102l-221,0l0,102zm102,17l-111,0l-8,0l-102,0l0,102l221,0l0,-102zm17,0l0,102l221,0l0,-102l-102,0l-9,0l-8,0l-102,0zm119,-17l102,0l9,0l8,0l102,0l0,-102l-221,0l0,102zm232,135l0,102l220,0l0,-102l-101,0l-9,0l-110,0zm-470,102l102,0l8,0l9,0l102,0l0,-102l-221,0l0,102z" id="svg_1"/>
+  </g>
+ </g>
+</svg>
