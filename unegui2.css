@@ -12,7 +12,7 @@
   min-width: 800px;
   position: absolute;
   padding-left: 100px;
-  padding-top: 10px;
+  padding-top: 1px;
 }
 .clear {
   clear: both;
@@ -51,7 +51,7 @@
   vertical-align: middle;
   width: 40px;
   height: 40px;
-  background: url("/static/images/icon-container.png") no-repeat;
+  background: url("") no-repeat;
   margin-right: 7px;
   padding: 4px 10px 4px 4px;
   line-height: 40px;
