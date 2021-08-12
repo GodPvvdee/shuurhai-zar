@@ -2,17 +2,357 @@
 <!doctype html>
 <html lang="mn">
 <head>
+  
+    
+    
+
+  <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUGVlRVDBACXVNUBgEAXg==",licenseKey:"322b8a179e",applicationID:"29261078"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(25),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(26),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(26),a=t(25);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||c(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(22),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(18),m=t(17),w=t(14),v=NREUM.o.REQ,g=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof g&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;"string"==typeof o?n=o:"object"==typeof o&&o instanceof v?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n);var s=(""+(o&&o instanceof v&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime])})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(17);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(25),s=t(26),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],19:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(27);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],20:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function s(t){"hidden"===t&&d("pageHide",[l.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d=t("handle"),l=t("loader"),p=t(24),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(s)}},{}],22:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],23:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],24:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],25:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],26:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],27:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(25),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(19),s=t("handle"),c=t(25),f=t("ee"),u=t(23),d=t(20),l=t(16),p=l.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,w="addEventListener",v="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},R=g&&y&&y[w]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(15),t(21),m[w]?(m[w]("DOMContentLoaded",o,!1),h[w]("load",r,!1)):(m[v]("onreadystatechange",i),h[v]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(26),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"322b8a179e","applicationID":"29261078","transactionName":"ZFcENxFWWhJQVhJaDF0dIBYNVEAIXltJUAxBV0gVClJDEgt8CFcGS2QPBhQZUwRF","queueTime":3,"applicationTime":317,"agent":""}</script>
+  <meta content="telephone=no" name="format-detection">
+  <link rel="icon" href="https://www.unegui.mn/static/favicons/favicon.ad97eb2fafd2.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://www.unegui.mn/static/favicons/favicon.ad97eb2fafd2.ico" type="image/x-icon">
+  
+  <link rel="apple-touch-icon" href="https://www.unegui.mn/static/images/app-icons/unegui/57.96c37a4cf7cc.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.unegui.mn/static/images/app-icons/unegui/57.96c37a4cf7cc.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.unegui.mn/static/images/app-icons/unegui/72.4d8e269ca67b.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.unegui.mn/static/images/app-icons/unegui/114.6af90caa6356.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.unegui.mn/static/images/app-icons/unegui/120.2083a12e5343.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.unegui.mn/static/images/app-icons/unegui/144.365a6fd381cc.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.unegui.mn/static/images/app-icons/unegui/152.ef8048d4a6b6.png" />
+  <link rel="apple-touch-icon" sizes="167x167" href="https://www.unegui.mn/static/images/app-icons/unegui/167.d6a31ad98a0c.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.unegui.mn/static/images/app-icons/unegui/180.1a7af625ea0b.png" />
+  
   <title>
+  
     Unegui.mn - Монголын зарын үнэгүй сайт.  Ажлын байр, үл хөдлөх  хөрөнгө, гар утас,компьютер г.м
-    <!-- <script src="unegui.js"></script> -->
+  
   </title>
-  <link rel="stylesheet" href="unegui2.css">
+  <meta name="description" content=" Та манай сайтанд бараагаа зарж, худалдан авч, солихоос гадна орон сууц, хашаа байшин,тавилгаа түрээслэж болно. Гар утас, компьютер, notebook, ажил хайх гэх мэт.Үнэ төлбөргүй зараа оруулж болно. ">
+  <meta name="keywords" content="Зарууд, Монгол, Дархан, Эрдэнэт, үнэгүй, зарын сайт, компьютерууд.Гар утас, орон сууц, хашаа байшин, хоноглох орон сууц, офисын байр, ажлын байрны орон тоо, Монгол дахь, тавилга, цахилгаан бараа, дэлгүүр, зарын самбар.">
+  
+    <link rel="canonical" href="https://www.unegui.mn/">
+  
+  
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.unegui.mn/">
+  
+
+  
+  <link rel="stylesheet" href="https://www.unegui.mn/static/css/bundles/somon_base.cd239847beb4.css">
+  
+  <link rel="stylesheet" href="https://www.unegui.mn/static/css/bundles/index.27af8acfca20.css">
+
+  <script>
+    var
+      app = app || {
+        config: {
+          workspace: 'desktop',
+          api_root: '/api/items/',
+          payapi_root: '/payapi/',
+          separator: ',',
+          point: '',
+          priceRound: '10',
+          float: false,
+          filterUrl: '/ajax-items-list/',
+          listing: {
+            count: 60
+          },
+          mapApiUrl: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBa7ESG3-rDdyps2nsYuZwQUxMgmHWnaUY&language=mn',
+          mobile: false,
+          ln:  '' ,
+          chat: {
+            url: '/messenger/',
+            apiKey: 'AIzaSyC0tLZK9YWcmiuq8rmIm80AwxbJzRyyuOU',
+            authDomain: 'unegui-zar.firebaseapp.com',
+            databaseURL: 'https://unegui-zar.firebaseio.com',
+            projectId: 'unegui-zar',
+            storageBucket: 'unegui-zar.appspot.com',
+            messagingSenderId: '756451687233'
+          },
+          privacyCookies: ""
+        },
+        modules: {}
+      };
+  </script>
+  
+  
+  
+  
 </head>
 <body class="_somon">
+  <div class="analytics dn js-analytics" id="analytics" data-a-google="UA-49943559-1" data-a-facebook="906299409454947" data-a-facebook-pixel="2034827673474769" data-a-mail="" data-a-yandex="40472925">
+    
+    
+        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=906299409454947&ev=PageView&noscript=1" /></noscript>
+    
+    
+        <noscript><div><img src="https://mc.yandex.ru/watch/40472925" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
+    <script type="text/javascript">
+    <!--
+      new Image().src = "//counter.yadro.ru/hit?r"+
+      escape(document.referrer)+((typeof(screen)=="undefined")?"":
+      ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+      screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+      ";h"+escape(document.title.substring(0,80))+
+      ";"+Math.random();//-->
+    </script>
+  </div>
   <div id="main" >
+    
+      <header class="post-render" data-url="/get_header/" ng-app="chatApp" ng-controller="appCtrl" itemscope="" itemtype="http://schema.org/Organization">
+        <meta itemprop="url" content="/" />
+      </header>
+    
+    
+      <div class="email-confirm js-email-confirm dn">
+  <div class="email-confirm__wrapper">
+    <div class="email-confirm__header">И-мэйл хаягаа баталгаажуулна уу.</div>
+    <div class="email-confirm__text">Таны <span class='js-sent-email-confirm'></span> гэсэн хаягт бид и-мэйл илгээсэн болно. Уг и-мэйлд байрлах "баталгаажуулах" товчлуурыг дарна уу. Дараагүй тохиолдолд зарын тухай ирсэн асуулт болон чатын мессэжний талаар бид мэдэгдэх боломжгүй юм.</div>
+    <button class="js-i-will" type="button">Баярлалаа, тэгье.</button>
+    <button class="js-resend-email-confirm _gray" type="button" data-url="/profile/resend-email/" title="И-мэйл дахин илгээх">Дахин илгээх</button>
+    <div class="js-is-send-confirmation dn email-confirm__hint">Баталгаажуулах и-мэйл хүргүүлсэн байна.</div>
+  </div>
+</div>
+    
+    <div class="email-confirm dn js-ban-user">
+  <div class="email-confirm__wrapper">
+    <div class="email-confirm__header">Та www.unegui.mn сайтаас блоклогдсон байна.</div>
+    <div class="email-confirm__text _mb0 js-ban-user-reason"></div>
+  </div>
+</div>
+    
+<section class="grey search-categories">
+  <div class="wrap">
+    <div class="search-index-left">
+      <form class="js-search-main js-index-form" action="/search/" data-city-default="" style="display: inline-block;">
+        <div class="search-block">
+  
+  
+  <div class="search">
+    <input class="js-query-search js-suggest-input " value="" autocomplete="off" type="search" name="q" data-default=" Зар байна"
+           
+      
+          
+       
+       placeholder="88,024 Зар байна"
+       
+    >
+    <div class="suggest dn js-suggest-result" data-in="—">
+  <ul class="suggest__list _rubric js-suggest-result-rubric"></ul>
+  <ul class="suggest__list _titles js-suggest-result-shops"></ul>
+  <ul class="suggest__list _titles js-suggest-result-titles"></ul>
+</div>
+    
+    <div class=" dd-block  js-dropdown" data-multi="true" data-empty="Бүх байршил">
+      
+        <div class="dd-label js-dd-label">Бүх байршил</div>
+        <div class="dd-list  js-city-block  js-dd-list">
+          <select name="cities" class="js-city-select" data-type="0">
+            <option
+              
+                data-city-count="88,024"
+              
+              value="all"
+            >Бүх байршил</option>
+            
+              <option value="1"
+                
+                  data-city-count="86,756"
+                
+                >
+                Улаанбаатар
+              </option>
+            
+              <option value="8"
+                
+                  data-city-count="28"
+                
+                >
+                Архангай
+              </option>
+            
+              <option value="9"
+                
+                  data-city-count="15"
+                
+                >
+                Баян-Өлгий
+              </option>
+            
+              <option value="10"
+                
+                  data-city-count="24"
+                
+                >
+                Баянхонгор
+              </option>
+            
+              <option value="11"
+                
+                  data-city-count="26"
+                
+                >
+                Булган
+              </option>
+            
+              <option value="12"
+                
+                  data-city-count="5"
+                
+                >
+                Говь-Алтай
+              </option>
+            
+              <option value="13"
+                
+                  data-city-count="10"
+                
+                >
+                Говьсүмбэр
+              </option>
+            
+              <option value="2"
+                
+                  data-city-count="134"
+                
+                >
+                Дархан-Уул
+              </option>
+            
+              <option value="14"
+                
+                  data-city-count="51"
+                
+                >
+                Дорноговь
+              </option>
+            
+              <option value="25"
+                
+                  data-city-count="26"
+                
+                >
+                Дорнод
+              </option>
+            
+              <option value="26"
+                
+                  data-city-count="18"
+                
+                >
+                Дундговь
+              </option>
+            
+              <option value="15"
+                
+                  data-city-count="15"
+                
+                >
+                Завхан
+              </option>
+            
+              <option value="3"
+                
+                  data-city-count="137"
+                
+                >
+                Орхон
+              </option>
+            
+              <option value="16"
+                
+                  data-city-count="32"
+                
+                >
+                Өвөрхангай
+              </option>
+            
+              <option value="17"
+                
+                  data-city-count="86"
+                
+                >
+                Өмнөговь
+              </option>
+            
+              <option value="18"
+                
+                  data-city-count="33"
+                
+                >
+                Сүхбаатар
+              </option>
+            
+              <option value="19"
+                
+                  data-city-count="71"
+                
+                >
+                Сэлэнгэ
+              </option>
+            
+              <option value="20"
+                
+                  data-city-count="464"
+                
+                >
+                Төв
+              </option>
+            
+              <option value="21"
+                
+                  data-city-count="7"
+                
+                >
+                Увс
+              </option>
+            
+              <option value="22"
+                
+                  data-city-count="11"
+                
+                >
+                Ховд
+              </option>
+            
+              <option value="23"
+                
+                  data-city-count="33"
+                
+                >
+                Хөвсгөл
+              </option>
+            
+              <option value="24"
+                
+                  data-city-count="33"
+                
+                >
+                Хэнтий
+              </option>
+            
+          </select>
+        </div>
+      
+    </div>
+    <div class="clear"></div>
+  </div>
+  
+    <input class="search-submit red-click" value="Хайх" type="submit">
+  
+  <div class="clear"></div>
+</div>
+      </form>
+      
+    </div>
+  </div>
+</section>
+    
 <section class="grey search-categories-rubric">
   <div class="wrap">
+    
     <div class="categories">
+      
+        
             <div class="category-item">
               <div class="icon-categories-container">
                 
@@ -20,11 +360,11 @@
                        alt="Хувцас хэрэглэл">
                 
               </div>
-              <p>Автомашин</p>
+              <p>Хувцас хэрэглэл</p>
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/huvtsas-hereglel/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(8,793)</span></a>
+                      <a href="/huvtsas-hereglel/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(8,659)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -60,7 +400,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/l-hdlh/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(13,544)</span></a>
+                      <a href="/l-hdlh/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(13,545)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -86,7 +426,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/avto-mashin/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(13,209)</span></a>
+                      <a href="/avto-mashin/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(12,880)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -120,7 +460,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/azhild-avna/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(7,112)</span></a>
+                      <a href="/azhild-avna/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(7,367)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -190,7 +530,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/hhdijn-baraa/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(2,818)</span></a>
+                      <a href="/hhdijn-baraa/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(2,858)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -236,7 +576,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/kompyuter-busad/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(5,910)</span></a>
+                      <a href="/kompyuter-busad/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(5,932)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -274,7 +614,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/utas--dugaar/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(6,361)</span></a>
+                      <a href="/utas--dugaar/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(6,344)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -306,7 +646,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/electro/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(3,693)</span></a>
+                      <a href="/electro/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(3,686)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -346,7 +686,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/ger-ahujn-baraa/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(5,603)</span></a>
+                      <a href="/ger-ahujn-baraa/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(5,572)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -388,7 +728,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/thrmzh-barilgyin-material-tlsh-thij-ed/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(4,840)</span></a>
+                      <a href="/thrmzh-barilgyin-material-tlsh-thij-ed/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(4,905)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -416,7 +756,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/hobbi-sport/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(3,368)</span></a>
+                      <a href="/hobbi-sport/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(3,363)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -462,7 +802,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/eruul-mend-goo-saikhan-huns/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(996)</span></a>
+                      <a href="/eruul-mend-goo-saikhan-huns/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(1,005)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -490,7 +830,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/mal-amitan/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(495)</span></a>
+                      <a href="/mal-amitan/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(500)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -522,7 +862,7 @@
               <div class="clear"></div>
                 <div class="sub-category-container">
                     <div class="sub-category clearfix">
-                      <a href="/jlchilgee/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(11,282)</span></a>
+                      <a href="/jlchilgee/" class="more-categories">Категори дахь бүх зарыг харах<span class="more-categories__count">(11,399)</span></a>
                       <div class="more-categories__hr"></div>
                       <ul class="sub-category-ul">
                         
@@ -613,14 +953,1411 @@
       
     </div>
     
+
+    <div class="hr"></div>
   </div>
 </section>
+
+    
+
+<section class="commodities">
+  <div class="wrap wrap--no-border">
+    
+    <div data-position="home" class="banner banner--home banner--sticky js-banner"></div>
+  </div>
+  
+  <div class="wrap wrap--no-border">
+    
+    
+
+    <h2 class="commodities__new-items-title">Шинэ зарууд</h2>
+    <div class="commodities-block index-commodities-block  index-commodities-block--full-width">
+    <div class="commodities-block__inner">
+    
+      
+      
+      <a href="/adv/5150170_khunii-nootsiin-neg-saryn-tankhim-surgalt/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/b9/b9/b9b944fe349a326ceb89c30b972adb6b.jpg">
+          
+        </div>
+        <p class="name ">Хүний нөөцийн нэг сарын танхим сургалт</p>
+        <div class="commodities-block__price ">
+          
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150154_sangiin-surgalt/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/1b/37/1b379615f25b19699acf8d7ef9641156.jpg">
+          
+        </div>
+        <p class="name ">Сангийн сургалт</p>
+        <div class="commodities-block__price ">
+          280,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150148_oiodliin-mashin/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/ec/4a/ec4a3e503f01305c37e687c1a479c16f.jpg">
+          
+        </div>
+        <p class="name ">Оёдлын машин</p>
+        <div class="commodities-block__price ">
+          1,1 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150147_sansart-2-uruu-tom-podwol-tureesluulne-tsonhtoi/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/8d/2a/8d2ad5458f2a18ec4c94d7d6818d721b.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>4</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Sansart 2 uruu tom podwol tsonhtoi</p>
+        <div class="commodities-block__price ">
+          250,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150145_toyota-harrier-2005-2019/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/1d/87/1d87e19de5554f3bca6ea5c8adce7254.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Harrier, 2005/2019</p>
+        <div class="commodities-block__price ">
+          28,5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150139_toyota-prius-10-11-2001-2010/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/64/a1/64a1fb7877c9864a2ab10ea2dc469011.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>7</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Prius 10, 11, 2001/2010</p>
+        <div class="commodities-block__price ">
+          5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150136_dunzen-khashaa-baishin-2-davkhar/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/8f/38/8f38e1629a4fd4d90d0d366dcacbc705.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>9</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Дүнзэн хашаа байшин. 2 давхар.</p>
+        <div class="commodities-block__price ">
+          52 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150134_a51-duos-global/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/29/26/292670bfccf58bb98228854df863af99.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">A51 duos global</p>
+        <div class="commodities-block__price ">
+          470,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150133_sansaryn-ktms-obekt/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/b6/28/b6282e63cf503225c169a965d3d45fe0.jpg">
+          
+            <div class="icon-wrapper">
+              
+                <span class="has-icon _flatplan"></span>
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>12</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Сансарын ктмс обьект</p>
+        <div class="commodities-block__price ">
+          140 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150132_toyota-aqua-2013-2021/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/d2/12/d212877f00cae92e9883aab7a624500d.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Aqua, 2013/2021</p>
+        <div class="commodities-block__price ">
+          12,3 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150131_imac-21-inch-2013/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/8b/16/8b1682b0db2413c784abb78721026b12.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>8</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Imac 21-inch 2013</p>
+        <div class="commodities-block__price ">
+          1,5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150130_3-4-khoroolol-altan-togrog-ikh-delguuriin-ard-3-oroo-bair/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/50/59/50599676f41e4933e6458a8920cca951.jpg">
+          
+            <div class="icon-wrapper">
+              
+                <span class="has-icon _flatplan"></span>
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>2</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">3-4 хороолол алтан төгрөг их дэлгүүрийн ард 3 өрөө байр</p>
+        <div class="commodities-block__price ">
+          105 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150129_tomor-shuugee/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/bc/c4/bcc495a048a8487e32bc6b5be512c926.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>2</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Төмөр шүүгээ</p>
+        <div class="commodities-block__price ">
+          120,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150128_tsuv/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/0c/eb/0ceb09593d430a922691840549a9daf8.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Tsuv</p>
+        <div class="commodities-block__price ">
+          49,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150125_dell-i7-8-ram-16gb-hard-128gb-1000tb/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/d4/0c/d40c245370aa1f27a2134dbebd957d55.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>4</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Dell i7-8 ram-16gb hard-128gb+1000tb</p>
+        <div class="commodities-block__price _verified">
+          2,49 сая <b>₮</b>
+          
+          <span class="verified" title="Баталгаажсан хэрэглэгч"></span></div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150121_avaad-barag-heregleegui-rolik-zarna-2sh-6tai-8tai-huhded-taarna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/cc/9f/cc9f751043a24895605d06a77b7fec0c.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">rolik</p>
+        <div class="commodities-block__price ">
+          55,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150120_zarna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/b3/86/b3869ab46e5013aba1bb33f7aa3e2095.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>4</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">хөшиг</p>
+        <div class="commodities-block__price ">
+          250,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150118_220k-residence-4-oroo-oron-suuf-khudaldana/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/2e/44/2e44ff730658b2f4e1a0ff7ebe225b52.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">220k residence 4 өрөө</p>
+        <div class="commodities-block__price ">
+          1,03 Тэрбум <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150117_asuudalgui-iphone11-zarna-tulna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/d3/28/d328de39190ef97d61ab41cab8aa3243.jpg">
+          
+        </div>
+        <p class="name ">Iphone 11</p>
+        <div class="commodities-block__price ">
+          1,5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150115_e-barimt-khevlegch-borluulna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/8a/ab/8aabe98a0da01fd9b6109fcea462d6bf.jpg">
+          
+        </div>
+        <p class="name ">E-barimt хэвлэгч</p>
+        <div class="commodities-block__price ">
+          150,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150109_macbook-air-m1-gold-zarna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/da/9c/da9cb33c8b5f667833c8c9bc9f1dde25.jpg">
+          
+        </div>
+        <p class="name ">Macbook air m1 gold</p>
+        <div class="commodities-block__price ">
+          3,2 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150108_toyota-prius-20-2004-2016/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/a4/1a/a41a91627ce02e560459fb33b2d60f28.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>4</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Prius 20, 2004/2016</p>
+        <div class="commodities-block__price ">
+          8,5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150107_redmi-note-8-zarna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/b7/a9/b7a9dee17e6e163de18fb70b281b145e.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Redmi note 8</p>
+        <div class="commodities-block__price ">
+          400,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150106_beagle-em-3-nastai/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/81/d8/81d82cbb5ae3e7e6ce3e78954769a175.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Beagle эм 3-настай</p>
+        <div class="commodities-block__price ">
+          200,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150105_toyota-estima-2004-2016/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/a1/fd/a1fd58218fb7280b091b9e334899e9c7.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Estima, 2004/2016</p>
+        <div class="commodities-block__price ">
+          5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150103_toyota-harrier-2006-2015/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/7d/58/7d585f0aa958a96ffef503fc181f6c71.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Harrier, 2006/2015</p>
+        <div class="commodities-block__price ">
+          17 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150098_solongos-chuluun-shiree/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/3a/8f/3a8f636bc0789ad94f0a6ab075e64896.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>5</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Солонгос чулуун ширээ</p>
+        <div class="commodities-block__price ">
+          200,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150096_zoogch-azhild-avna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/80/05/8005ed751fef79d85890552e9027d2b7.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>2</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Зөөгч</p>
+        <div class="commodities-block__price ">
+          
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150093_khuukhdiin-khold-oruulagch-khiamd-zarna-chanartai/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/d8/e4/d8e46d5773929b58b1bf073c96b4afa1.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Хүүхдийн хөлд оруулагч</p>
+        <div class="commodities-block__price ">
+          55,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150092_razer-huntsman-quartz/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/46/ee/46ee0e673dcfe3555cc05c2ec0759377.jpg">
+          
+        </div>
+        <p class="name ">Razer huntsman quartz</p>
+        <div class="commodities-block__price ">
+          260,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150090_khotyn-tovd-uilchilgeenii-talbai-tureesluulne/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/14/25/14256209f8295e0c14a4c78211f0a844.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>14</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Хотын төвд үйлчилгээний талбай</p>
+        <div class="commodities-block__price ">
+          6 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150089_toyota-prius-20-2005-2016/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/73/5e/735e895bc38ef91be4520d1111a238b7.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>3</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Toyota Prius 20, 2005/2016</p>
+        <div class="commodities-block__price ">
+          8,5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150088_khunnu-molyn-khazhuud-shine-orgoo-khoroolold-3-oroo-bair-tureesluulne/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/ab/93/ab939b91460d977a9ca4fd389d387126.jpg">
+          
+            <div class="icon-wrapper">
+              
+                <span class="has-icon _flatplan"></span>
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>16</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Хүннү молын хажууд шинэ өргөө хороололд 3 өрөө</p>
+        <div class="commodities-block__price ">
+          900,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150086_narny-khoroolold-2-oroo/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/b7/d4/b7d4a3fcc2b747ad0f5e8c62755245f9.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>6</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Нарны хороололд 2 өрөө</p>
+        <div class="commodities-block__price ">
+          3,4 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150085_2-oroo-bair-zarna/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/07/93/0793e492eabf51627645252393925fa9.jpg">
+          
+        </div>
+        <p class="name ">2 өрөө байр</p>
+        <div class="commodities-block__price ">
+          92 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150084_canar-saitai-edelgee-daana/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/27/c2/27c2dac8ee17bb94ddc4492be6127e65.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>2</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">скүүтэр</p>
+        <div class="commodities-block__price ">
+          40,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150083_100-ailyn-baruun-tald-gal-togoony-tavilgatai-2-oroo/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/2a/cf/2acf5f3cc87614f60e3fa3f27244f62a.jpg">
+          
+            <div class="icon-wrapper">
+              
+                <span class="has-icon _flatplan"></span>
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>6</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">100 айлын баруун талд гал тогооны тавилгатай 2 өрөө</p>
+        <div class="commodities-block__price _verified">
+          800,000 <b>₮</b>
+          
+          <span class="verified" title="Баталгаажсан хэрэглэгч"></span></div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150082_khar-tsagaan-zamask/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/0f/08/0f08ffa41b9b50779616f568958ec08f.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>5</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Хар цагаан замаск</p>
+        <div class="commodities-block__price ">
+          6,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150080_nissan-advan-2015-2020/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/23/7c/237c18a516f5b89d4579cfce7f5f4de0.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>5</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Nissan Advan, 2015/2020</p>
+        <div class="commodities-block__price ">
+          8,5 сая <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      
+      
+      <a href="/adv/5150077_trinx-brendiin-orig-dugui/" class="iteam-commodities">
+        <div class="commodities-bg ">
+          <img src="https://cdn.unegui.mn/media/cache1/59/2c/592c1abb0be40212c1038dcc617c0724.jpg">
+          
+            <div class="icon-wrapper">
+              
+              
+              
+                <div class="photo-commodities">
+                  <p>4</p>
+                </div>
+              
+            </div>
+          
+        </div>
+        <p class="name ">Trinx брэндийн ориг дугуй</p>
+        <div class="commodities-block__price ">
+          850,000 <b>₮</b>
+          
+          </div>
+        
+        
+      </a>
+      
+      </div>
+    </div>
+
+    <div class="commodities-space dn">
+        
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="wrap wrap--single-border">
+    <a class="all-announcement sticky-stopper" href="/search/">Бүх зарууд</a>
+  </div>
+
+  
+    <div class="wrap wrap--single-border _no-padding">
+      <div class="stores-index">
+        <div class="stores-index__header">
+          <h2>Unegui.mn харилцагчид</h2>
+          <a class="stores-index__header-add" href="/stores/">Бүгдийг харах</a>
+        </div>
+        <ul class="stores-index__list">
+          
+            
+            <li class="stores-index__item">
+              
+                
+                <div class="stores-index__item-logo">
+                  <img src="https://cdn.unegui.mn/media/cache1/81/1b/811bb586e0f83e7e5f4e2e2eb244fc48.jpg" alt="ARD Car auto dealer" title="ARD Car auto dealer">
+                </div>
+              
+              <a class="stores-index__item-title" href="/items/author/6426/">ARD Car auto dealer</a>
+              <div class="stores-index__item-count">22 зар</div>
+              <a class="mask" href="/items/author/6426/"></a>
+            </li>
+          
+            
+            <li class="stores-index__item">
+              
+                
+                <div class="stores-index__item-logo">
+                  <img src="https://cdn.unegui.mn/media/cache1/49/00/4900df2136903336989539bfaa42dfa6.jpg" alt="Тансаг моторс" title="Тансаг моторс">
+                </div>
+              
+              <a class="stores-index__item-title" href="/tansagmotors/">Тансаг моторс</a>
+              <div class="stores-index__item-count">2 зар</div>
+              <a class="mask" href="/tansagmotors/"></a>
+            </li>
+          
+            
+            <li class="stores-index__item">
+              
+                
+                <div class="stores-index__item-logo">
+                  <img src="https://cdn.unegui.mn/media/cache1/6a/68/6a682ad0b459643310e3a33dce916ce8.jpg" alt="MARCO PROPERTIES" title="MARCO PROPERTIES">
+                </div>
+              
+              <a class="stores-index__item-title" href="/marco/">MARCO PROPERTIES</a>
+              <div class="stores-index__item-count">44 зар</div>
+              <a class="mask" href="/marco/"></a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  
+
+  
+    <div class="wrap">
+      <div class="stories">
+        <h2 class="stories__header">Хэрэглэгчдийн амжилтын талаар уншина уу</h2>
+        <ul class="stories__list">
+          
+            <li class="stories__item">
+              <div class="stories__item-wrapper">
+                <div class="stories__item-name">Lucky</div>
+                
+                  <div class="stories__item-text">3honog zar tawiad zaraad laa mash ih bayrlalaa</div>
+                
+              </div>
+            </li>
+          
+            <li class="stories__item">
+              <div class="stories__item-wrapper">
+                <div class="stories__item-name">Az</div>
+                
+                  <div class="stories__item-text">баярлалаа хэрэгтэй апп шүү</div>
+                
+              </div>
+            </li>
+          
+            <li class="stories__item">
+              <div class="stories__item-wrapper">
+                <div class="stories__item-name">МӨНХТУЛГА</div>
+                
+                  <div class="stories__item-text">Bayarllaa. Tanai site.aar mashinaa hurdan shuurhai hyalbar hudaldaj chadlaa. Ajliin amjilt husie bayarllaa</div>
+                
+              </div>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  
+
+</section>
+<section class="index-text-liks">
+  <div class="wrap">
+    <div class="index-text">
+      <div class="index-text-link">
+        <h3>Эрэлттэй хайлтууд </h3>
+        
+            
+                <a class="name" href="https://www.unegui.mn/azhild-avna/">ajiliin zar</a>
+            
+                <a class="name" href="https://www.unegui.mn/avto-mashin/">avto zar</a>
+            
+                <a class="name" href="https://www.unegui.mn/avto-mashin/-avtomashin-zarna/">Автомашин зарна</a>
+            
+                <a class="name" href="https://www.unegui.mn/avto-mashin/-avtomashin-zarna/toyota/prius/">Toyota Prius zarna</a>
+            
+                <a class="name" href="https://www.unegui.mn/l-hdlh/oron-suuts-zarna/2-r/">2 өрөө байр</a>
+            
+                <a class="name" href="https://www.unegui.mn/azhild-avna/">Ажилд авна</a>
+            
+                <a class="name" href="https://www.unegui.mn/utas--dugaar/gar-utas-ba-utasnuud/iphone/">IPhone zarna</a>
+            
+                <a class="name" href="https://www.unegui.mn/kompyuter-busad/notebook/">Notebook</a>
+            
+                <a class="name" href="https://www.unegui.mn/huvtsas-hereglel/emegtej-huvtsas/gaduur-huvtsas/">Гадуур хувцас</a>
+            
+        
+      </div>
+      <div class="hr"></div>
+      
+        <p>Монголын номер нэг худалдааны сайт Үнэгүй.мн-д тавтай морилно уу. Та манай цахим хуудсаар дамжуулан худалдааны бүх төрлийн салбарт онлайн хэлбэрээр үйлчлүүлэх боломжтой. Бид таны цаг завыг хэмнэн нэг дор бүх төрлийн олон мянган зарыг нэгтгэсэн цогц зарын мэдээллийг хүргэж байна. Үнэгүй.мн сайтны тусламжтайгаар та хүссэн бараа бүтээгдэхүүнээ худалдаалж, худалдан авахаас гадна, ажлын байрны зар хайх, ажлын байрны зар зарлах, автомашин, авто техникийн бүх төрлийн машин авна, машин зарна, машинаар солино гэх мэт автозарыг хайх, зарлуулах боломжтой. Мөн  түүнчлэн үл хөдлөх зарна, үл хөдлөх солино, үл хөдлөх түрээслэнэ, үл хөдлөх авна гэсэн зарын мэдээллийг авч, өгөх боломжтой. Үүнээс гадна үнэгүй мн зарын сайтны тусламжтайгаар бүх төрлийн үйлчилгээний зарын мэдээллийг авч, сайтаар зарлуулах боломжтой.</p>
+          <p>Монголдоо номер нэг худалдааны зарын сайт.  Бид та бүхний зарыг өөрсдийн цахим хуудсаараа дамжуулан түргэн шуурхай түмэнд түгээх болно.</p>
+        <p>Та бүхэн бусдын болоод өөрийн цаг завыг хүндэлж үнэн бодитой зарын мэдээллийг бидэнд өгнө үү. Баярлалаа, таныг хүндэтгэсэн Монголын номер нэг худалдааны сайт Үнэгүй.мн</p>
+      
+    </div>
+    <div class="links">
+      
+      
+      
+        
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/mn_MN/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- data-layout может так же варьироваться. Вместо button_count можно включить box_count. Ну и урл текущего сайта проставить. В ссылке на сдк меняется язык. -->
+<div class="fb-share-button" data-href="https://www.unegui.mn/" data-layout="box_count"></div>
+
+      
+      
+        
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/Share" data-counter="top"></script>
+
+      
+      
+    </div>
+    <div class="clear"></div>
+  </div>
 </section>
 
-  <!-- <script src="https://www.unegui.mn/static/js/bundles/base_js.91e15b32e7e7.js"></script> -->
+
+
+
+
+  </div>
+  <ul class="chat-notify js-chat-notify"></ul>
+<script id="chat-notify-item" type="text/x-handlebars-template">
   
-<script src="unegui.js"></script>
-<script src="category.js"></script>
+  <li class="chat-notify__item js-chat-notify-item" data-id="{{ message }}" {{#if mass}}data-mass="{{ mass }}"{{/if}}>
+    {{#if room}}
+    <img class="chat-notify__item-image" src="{{#if image}}{{image}}{{else}}/static/images/photoapparat-big.png{{/if}}">
+    <div class="chat-notify__item-body">
+      <div class="chat-notify__item-header">
+        {{ name }}
+      </div>
+      {{#if imageMessage}}
+        <div class="chat-notify__item-text">
+          <img src="{{ imageMessage }}" alt="">
+        </div>
+      {{else}}
+        <div class="chat-notify__item-text">
+          {{ text }}
+        </div>
+      {{/if}}
+    </div>
+    <a href="/messenger/?room={{room}}" class="mask js-close-chat-link" target="_blank"></a>
+    {{else}}
+    <img class="chat-notify__item-image" src="/static/images/fb/unegui.png">
+    <div class="chat-notify__item-body">
+      <div class="chat-notify__item-header _admin">
+        Админ чат
+      </div>
+      {{#if imageMessage}}
+        <div class="chat-notify__item-text">
+          <img src="{{ imageMessage }}" alt="">
+        </div>
+      {{else}}
+        <div class="chat-notify__item-text">
+          {{ text }}
+        </div>
+      {{/if}}
+    </div>
+    <a href="/messenger/?room=admin" class="mask js-close-chat-link" target="_blank"></a>
+    {{/if}}
+    <div class="chat-notify__item-close js-close-chat-notify"></div>
+  </li>
+  
+</script>
+  
+    <footer class="footer sticky-stopper js-footer">
+  <div class="wrap">
+    <div class="footer__row _line">
+      <div class="footer__column _middle">
+        <a class="footer__logo" href="/"></a>
+      </div>
+      <div class="footer__column _middle">
+        <div class="footer__social">
+          
+            <a class="footer__social-item _fb" href="https://www.facebook.com/unegui.mn/" target="_blank"></a>
+          
+          
+          
+          
+            <a class="footer__social-item _ln" href="https://www.linkedin.com/company/unegui-group-llc" target="_blank"></a>
+          
+          
+        </div>
+      </div>
+      <div class="footer__column _middle">
+        <a class="header-menu-item _add " href="/post_ad/">Зар нэмэх</a>
+        
+      </div>
+      <div class="footer__column _middle">
+        
+          <div class="footer__app">
+            <a class="footer__app-google mn" href="https://play.google.com/store/apps/details?id=com.larixon.uneguimn&amp;referrer=&amp;utm_source=site&amp;utm_medium=cpc&amp;utm_term=mobile_v" target="_blank">
+              <img alt="Unegui.mn зар" src="https://www.unegui.mn/static/images/store/mn_google.5063ff6bbf6e.png" />
+            </a>
+            <a class="footer__app-apple mn" href="https://itunes.apple.com/app/id1176505493" target="_blank">
+              <img src="https://www.unegui.mn/static/images/store/mn_apple.cb3e6bc03e05.png" alt="Unegui.mn зар">
+            </a>
+          </div>
+        
+      </div>
+    </div>
+    <div class="footer__row">
+      <div class="footer__column">
+        
+          <span class="footer__link _bold js-change-version" data-domain=".unegui.mn" data-version="mobile">Гар утасны хувилбар </span>
+        
+        
+        
+          <a class="footer__link" href="/feedback/">Санал хүсэлт, сэтгэгдэл</a>
+          
+        
+        <a class="footer__link" href="/sitemap/">Сайтын бүтэц</a>
+        <a class="footer__link" href="/sitemap/location/">Байршлууд</a>
+        
+        
+          
+            <a class="footer__link" href="/about/rules/">Үйлчилгээний нөхцөл</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+      <div class="footer__column">
+        
+          
+        
+          
+            <a class="footer__link" href="/about/license/">Лицензийн гэрээ, License agreement</a>
+          
+        
+          
+            <a class="footer__link" href="/advertising/">Баннер байршуулах</a>
+          
+        
+          
+            <a class="footer__link" href="/help/">Тусламж</a>
+          
+        
+          
+            <a class="footer__link" href="/safety/">Аюулгүй ажиллагаа</a>
+          
+        
+      </div>
+      <div class="footer__column _full">
+        <div class="install-app">
+          <div class="install-app__content">
+            <div class="install-app__title">Үнэгүй.мн апп суулгах</div>
+            <div class="install-app__label js-success-install-app dn">Баталгаажуулах мессежээр хүргүүлсэн байна.</div>
+            <div class="install-app__label js-label-install-app">Холбоосыг мессежээр авах</div>
+            <form class="install-app__wrapper js-submit-install-app" data-prefix="+976" action='/api/users/send_app_link/'>
+              <input class="install-app__input js-input-phone-install-app" data-mask-format="99 999 999" data-placeholder="__ ___ ___" data-prefix="+976" type="text">
+              <button class="install-app__button js-button-install-app">‣</button>
+            </form>
+            <div class="install-app__error js-error-install-app"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__owner">
+    <div class="wrap">
+      <a href="http://www.larixon.com/">larixonclassifieds.com</a>
+    </div>
+  </div>
+</footer>
+  
+  <script id="cities-regions-template" type="text/x-handlebars-template">
+  <div class="cities-regions">
+    <div class="cities-regions__wrapper">
+      <div class="cities-regions__header">Select District/Settlement</div>
+      <input type="text" class="cities-regions__search js-search-cities-regions" placeholder="Start typing settlement name here">
+      <ul class="cities-regions__selected js-selected-cities-regions"></ul>
+    </div>
+    <table border="0" cellpadding="0" cellspacing="0" class="cities-regions__table js-table-cities-regions">
+      <tr>
+        <th class="cities-regions__table-header">District popup</th>
+        <th class="cities-regions__table-header">Location popup</th>
+      </tr>
+      <tr>
+        <td class="cities-regions__table-item">
+          <ul class="cities-regions__list js-cities-wrapper-cities-regions" data-all="All district"></ul>
+        </td>
+        <td class="cities-regions__table-item">
+          <ul class="cities-regions__list js-regions-wrapper-cities-regions" data-all="All location"></ul>
+        </td>
+      </tr>
+    </table>
+
+    <table border="0" cellpadding="0" cellspacing="0" class="cities-regions__table dn js-table-search-cities-regions">
+      <tr>
+        <th class="cities-regions__table-header" style="padding-left: 350px;">Settlements</th>
+      </tr>
+      <tr>
+        <td class="cities-regions__table-item" style="padding-left: 350px;">
+          <ul class="cities-regions__list js-search-wrapper-cities-regions"></ul>
+        </td>
+      </tr>
+    </table>
+
+    <div class="cities-regions__action">
+      <button type="button" class="cities-regions__button js-save-button-cities-regions">Продолжить</button>
+    </div>
+  </div>
+</script>
+  <div class="js-dialog-popup clearfix"></div>
+  <div class="js-preloader-main preloader-main dn"></div>
+  <div class="favorites__wrapper js-searches-denied-message">
+    <div class="favorites__outline"></div>
+    <div class=" favorites__message">Error 400</div>
+  </div>
+  <div class="mask-block js-mask-block dn">
+  <div class="mask-block__close js-close-presentation">
+
+  </div>
+  <canvas id="mask-block"></canvas>
+  <div class="mask-block__content mask-block__content--first">
+    <div class="mask-block__arrow">
+
+    </div>
+    <div class="mask-block__heading">
+      Хайлтаа хадгалаарай
+    </div>
+    <div class="mask-block__text">
+      Хайлтын илэрцийн хуудас дээрх &#34;Хайлт хадгалах&#34; товчлуур дээр дарна уу.
+      <br>
+      Таалагдсан хэсэг дэх шинэчлэлтүүдээ шалгана уу.
+      
+    </div>
+    <button type="button" class="mask-block__button js-mask-button" data-step="1">Үргэлжлэх үү</button>
+  </div>
+  <div class="mask-block__content mask-block__content--second dn">
+    <div class="mask-block__arrow">
+
+    </div>
+    <div class="mask-block__heading">
+      Таалагдсан зарууд уруу нэмэх
+    </div>
+    <div class="mask-block__text">
+      Энэ зарын &#34;Одыг&#34; дарж, &#34;Таалагдсан&#34; хэсэгтээ оруулбал дахин олоход хялбар байх болно.
+    </div>
+    <button type="button" class="mask-block__button js-mask-button" data-step="2">Үргэлжлэх үү</button>
+  </div>
+</div>
+  <script src="https://www.unegui.mn/static/js/bundles/base_js.91e15b32e7e7.js"></script>
+  
+  
+  <script>
+    app.modules.main = app.modules.main || {};
+    app.modules.main.ready = function() {
+      
+      
+    };
+  </script>
+  <script src="https://www.unegui.mn/static/js/standalone/application_init.da7913ac7097.js"></script>
+  
+  
 
   
   
